@@ -5,6 +5,10 @@
 #ifndef ULID_H
 #define ULID_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Generator configuration flags */
 #define ULID_RELAXED   (1 << 0)
 #define ULID_PARANOID  (1 << 1)
@@ -54,5 +58,9 @@ void ulid_encode(char [27], const unsigned char [16]);
  * Returns non-zero if input was invalid.
  */
 int  ulid_decode(unsigned char [16], const char *);
+
+#ifdef __cplusplus
+};
+#endif
 
 #endif
